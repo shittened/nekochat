@@ -1,0 +1,27 @@
+<!doctotype html>
+<html>
+    <head>
+        <link rel = "stylesheet" type = "text/css" href = "auth.css">
+    </head>
+    <body>
+        <div class = "signup">
+            <h1>Sign up</h1>
+            <form id = "signup-form">
+                <input type = "text" placeholder = "Name" id = "signup_name">
+                <input type = "email" placeholder = "E-mail" id = "signup_email">
+                <input type = "password" placeholder = "Password" id = "signup_password">
+                <button type = "submit">Sign up</button>
+            </form>
+        </div>
+        <div class = "login">
+            <h1>Log in</h1>
+            <form id = "login-form">
+                <input type = "email" placeholder = "E-mail" id = "login_email">
+                <input type = "password" placeholder = "Password" id = "login_password">
+                <button type = "submit">Log in</button>
+            </form>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src = "auth.js"></script>
+</html>
