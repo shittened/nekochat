@@ -44,3 +44,11 @@ function Login(email, password) {
     document.cookie='password=' + password
     window.open('chat.html', '_self')
 }
+
+async function LogOut() {
+    await client.auth.signOut()
+    document.cookie = "email=; expires=Thu, 01 Jan 1970 00:00:00 UTC"
+    document.cookie = "password=; expires=Thu, 01 Jan 1970 00:00:00 UTC"
+}
+
+LogOut()

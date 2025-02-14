@@ -30,8 +30,13 @@ async function SendMessage(message) {
 message_form.addEventListener(
     'submit', function(e) {
         e.preventDefault()
-        const message = message_input.value
-        SendMessage(message)
+        var message = message_input.value
+        if (message != '') {
+            SendMessage(message)
+        }
+        if (message == '/logout') {
+            window.open('auth.html', '_self')
+        }
     }
 )
 
@@ -49,8 +54,14 @@ function AddMessageToChat(message) {
         </div>
         <div class = "message-content">
             ${message.message}
-        </div>
     `
+    if (message.message == '/neko' || message.message == '/nya') {
+        message_div.innerHTML += `<img src = "https://media1.tenor.com/m/1tFhwbjFsxAAAAAC/cat-girl.gif">`
+    }
+    else if (message.message == '/help') {
+          message_div.innerHTML += `<br>/neko or /nya - catgirl gif<br>/logout - log out<br><p>`
+    }
+    message_div.innerHTML += `</div>`
     messages_display.append(message_div)
 
     client.channel('custom-insert-channel')
@@ -63,7 +74,13 @@ function AddMessageToChat(message) {
                 AddMessageToChat(message.new)
             }
         ).subscribe()
+    messages_display.scrollTop = messages_display.scrollHeight
 }
 
-Login(email, password)
-GetMessages()
+try {
+    Login(email, password)
+    GetMessages()
+}
+catch {
+    window.open('auth.html', '_self')
+}

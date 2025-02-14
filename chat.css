@@ -30,6 +30,7 @@ body{
     border-radius: 10px;
     margin-left: 5px;
     margin-right: 5px;
+    padding: 5px;
 }
 
 .message:hover {
@@ -110,4 +111,11 @@ textarea:focus, input:focus{
 
 ::-webkit-scrollbar-thumb {
   background: var(--red);
+}
+
+img {
+    width: 300px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
 }
