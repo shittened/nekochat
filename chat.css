@@ -13,6 +13,20 @@
 
 @font-face {font-family: S; src: url('Sauce Code Pro Nerd Font Complete.ttf');}
 
+@media (orientation: portrait) {
+    body {
+        font-size: 32px;
+    }
+
+    #message-input {
+        font-size: 28px;
+    }
+
+    #message-send-button {
+        font-size: 28px;
+    }
+}
+
 body{
     display: flex;
     flex-direction: column;
@@ -73,6 +87,7 @@ body{
     height: 30px;
     width: calc(100vw - 85px);
     font-family: S;
+    font-size: 14px;
     background: var(--shadow);
     color: var(--white);
     outline: none;
