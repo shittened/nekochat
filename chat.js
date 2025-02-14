@@ -80,6 +80,7 @@ function AddMessageToChat(message) {
 try {
     Login(email, password)
     GetMessages()
+    messages_display.scrollTop = messages_display.scrollHeight
 }
 catch {
     window.open('auth.html', '_self')
